@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoMart</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
    <header class="cabecalho container">
-        <img src="{{ url_for('static', filename='img/logo-chatbot.svg') }}" alt="Logo Chatbot">
+        <img src="../static/img/logo-chatbot.svg" alt="Logo Chatbot">
         <div class="cabecalho__acoes">
             
         </div>
@@ -27,12 +27,12 @@
                 </button>
                 <input type="text" class="entrada__input" placeholder="Enviar uma mensagem" id="input">
                 <button aria-label="Botão de enviar" id="botao-enviar">
-                    <img class="icone icone--enviar-mensagem"></>
+                    <img class="icone icone--enviar-mensagem">
                 </button>
             </div>
         </section>
    </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="../static/js/index.js"></script>
 </html>
