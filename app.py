@@ -5,6 +5,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from helpers import *
 from selecionar_persona import *
+from selecionar_documento import *
 import os
 
 load_dotenv()
@@ -17,12 +18,12 @@ cors = CORS(app)
 app.config["CORS_HEADERS"] = 'Content-Type'
 app.secret_key = 'alura'
 
-contexto = carrega("dados/ecomart.txt")
-
 def bot(prompt):
     maximo_tentativas = 1
     repeticao = 0
     personalidade = personas[selecionar_persona(prompt)]
+    contexto = selecionar_contexto(prompt)
+    documento_selecionado = selecionar_documento(contexto)
 
     while True:
         try:
@@ -32,8 +33,9 @@ def bot(prompt):
 
             Você deve gerar respostas utilizando o contexto abaixo.
             Você deve adotar a persona abaixo.
+
             # Contexto
-            {contexto}
+            {documento_selecionado}
 
             # Persona
             {personalidade}
